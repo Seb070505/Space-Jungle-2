@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/spotlight.mp3-e23407679aadf9aea5601082a0ce72e8.mp3str"
+
+[deps]
+
+source_file="res://Assets/spotlight.mp3"
+dest_files=[ "res://.import/spotlight.mp3-e23407679aadf9aea5601082a0ce72e8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

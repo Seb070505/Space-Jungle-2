@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/DuckTales_Music_NES_-_The_Moon_Theme.mp3-69764cb76e502b7c566d10e9d81f179b.mp3str"
+
+[deps]
+
+source_file="res://Assets/DuckTales_Music_NES_-_The_Moon_Theme.mp3"
+dest_files=[ "res://.import/DuckTales_Music_NES_-_The_Moon_Theme.mp3-69764cb76e502b7c566d10e9d81f179b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

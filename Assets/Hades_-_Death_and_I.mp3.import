@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Hades_-_Death_and_I.mp3-890fea7e9b841f5345dea30a5e31bc50.mp3str"
+
+[deps]
+
+source_file="res://Assets/Hades_-_Death_and_I.mp3"
+dest_files=[ "res://.import/Hades_-_Death_and_I.mp3-890fea7e9b841f5345dea30a5e31bc50.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

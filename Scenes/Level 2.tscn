@@ -1,0 +1,96 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scenes/Tilemapfrdig.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Level 2.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Ngle.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/HUD.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Copperplate Gothic Bold Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Scenes/Goblin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Skeleton.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Mushroom.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/DuckTales_Music_NES_-_The_Moon_Theme.mp3" type="AudioStream" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4538.25, 215.25 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.160784, 0.141176, 0.141176, 0.721569 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=3]
+size = 12
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+font_data = ExtResource( 6 )
+
+[node name="Level 2" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Tilemap2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -819, 233 )
+scale = Vector2( 3, 3 )
+
+[node name="Mushroom" parent="." instance=ExtResource( 9 )]
+position = Vector2( 4673, -63 )
+scale = Vector2( 2, 2 )
+
+[node name="Goblin" parent="." instance=ExtResource( 7 )]
+position = Vector2( 3427, -77 )
+scale = Vector2( 2, 2 )
+
+[node name="Skeleton" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1109, 74 )
+scale = Vector2( 2, 2 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="death" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="death"]
+position = Vector2( 3344.75, 723.25 )
+shape = SubResource( 1 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 5 )
+
+[node name="Panel" type="Panel" parent="HUD"]
+margin_left = 19.0
+margin_top = 16.0
+margin_right = 109.0
+margin_bottom = 56.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+margin_left = 38.0
+margin_top = 22.0
+margin_right = 78.0
+margin_bottom = 62.0
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="HUD"]
+margin_left = 61.0
+margin_top = 28.0
+margin_right = 101.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 3 )
+text = "X"
+
+[node name="keys_antal" type="Label" parent="HUD"]
+margin_left = 78.0
+margin_top = 21.0
+margin_right = 126.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 4 )
+text = "#"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
+
+[connection signal="body_entered" from="death" to="." method="_on_death_body_entered"]
